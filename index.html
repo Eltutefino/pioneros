@@ -469,7 +469,7 @@
                 (p.name || '').toLowerCase().includes(searchTerm)
             );
 
-            elements.counter.textContent = ;
+            elements.counter.textContent = "Total Cargados: " + pioneros.length;
 
             if (filteredPioneros.length === 0) {
                 if (pioneros.length === 0) {
@@ -507,7 +507,7 @@
                 badgeTypes.forEach(bt => {
                     const badgeBtn = document.createElement('button');
                     const isActive = pionero.badges ? !!pionero.badges[bt.id] : false;
-                    badgeBtn.className = ;
+                    badgeBtn.className = "badge-btn " + (isActive ? "active" : "");
                     badgeBtn.title = bt.name;
                     badgeBtn.onclick = () => toggleBadge(pionero.id, bt.id);
 
