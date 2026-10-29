@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipo Pioneros - Control de Insignias</title>
+    <title>Equipo Pioneros - JM Schoenstatt</title>
     <style>
         :root {
             --bg-color: #1A365D;
@@ -24,7 +24,7 @@
             color: var(--border-color);
             font-family: 'Arial Black', 'Segoe UI Black', Impact, sans-serif;
             margin: 0;
-            padding: 30px 20px;
+            padding: 20px 15px 50px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -41,26 +41,26 @@
             background-color: var(--card-bg);
             border: var(--border-width) solid var(--border-color);
             box-shadow: 8px 8px 0px var(--border-color);
-            padding: 30px;
+            padding: 25px 20px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             position: relative;
         }
 
         header::before {
             content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
             border: 2px solid var(--border-color);
             pointer-events: none;
         }
 
         header h1 {
             margin: 0;
-            font-size: clamp(2rem, 5vw, 4rem);
+            font-size: clamp(2rem, 5vw, 3.8rem);
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 2px 2px 0px var(--accent-yellow);
@@ -68,11 +68,11 @@
 
         header p {
             margin: 10px 0 0 0;
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-size: clamp(1.1rem, 2.8vw, 1.6rem);
             background-color: var(--accent-red);
             color: white;
             display: inline-block;
-            padding: 5px 15px;
+            padding: 4px 15px;
             border: 3px solid var(--border-color);
             transform: rotate(-1deg);
         }
@@ -80,27 +80,27 @@
         .status-bar {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .counter {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             background: var(--accent-yellow);
             display: inline-block;
-            padding: 8px 20px;
+            padding: 6px 16px;
             border: var(--border-width) solid var(--border-color);
             box-shadow: 4px 4px 0px var(--border-color);
         }
 
         .sync-badge {
-            font-size: 1.1rem;
+            font-size: 1rem;
             background: #ffffff;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border: var(--border-width) solid var(--border-color);
             box-shadow: 4px 4px 0px var(--border-color);
         }
@@ -113,11 +113,54 @@
             border: 2px solid #000;
         }
 
-        /* CONTROLS */
+        /* NAVIGATION TABS */
+        .nav-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 220px;
+            padding: 16px 12px;
+            font-size: 1.2rem;
+            font-family: inherit;
+            text-transform: uppercase;
+            border: var(--border-width) solid var(--border-color);
+            background: var(--card-bg);
+            cursor: pointer;
+            box-shadow: 6px 6px 0px var(--border-color);
+            transition: all 0.1s;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background: #fff;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-yellow);
+            transform: translate(2px, 2px);
+            box-shadow: 4px 4px 0px var(--border-color);
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* CONTROLS (TAB 1) */
         .controls {
             display: flex;
             gap: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
             background-color: var(--card-bg);
             padding: 20px;
@@ -128,14 +171,14 @@
         .control-group {
             display: flex;
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
             gap: 10px;
         }
 
         input {
             flex: 1;
-            padding: 15px;
-            font-size: 1.2rem;
+            padding: 14px;
+            font-size: 1.15rem;
             font-family: inherit;
             border: var(--border-width) solid var(--border-color);
             background: #ffffff;
@@ -149,8 +192,8 @@
         }
 
         button {
-            padding: 15px 25px;
-            font-size: 1.2rem;
+            padding: 14px 22px;
+            font-size: 1.15rem;
             font-family: inherit;
             text-transform: uppercase;
             border: var(--border-width) solid var(--border-color);
@@ -173,14 +216,14 @@
             background-color: #e53e3e;
         }
 
-        /* GRID */
+        /* GRID PIONEROS */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 30px;
         }
 
-        /* CARD */
+        /* CARD PIONERO */
         .card {
             background-color: var(--card-bg);
             border: var(--border-width) solid var(--border-color);
@@ -188,7 +231,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
             position: relative;
         }
 
@@ -197,12 +240,12 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
             border-bottom: 4px solid var(--border-color);
         }
 
         .card-title {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             margin: 0;
             line-height: 1.1;
             word-break: break-word;
@@ -211,8 +254,8 @@
         .delete-btn {
             background-color: var(--border-color);
             color: white;
-            padding: 8px 14px;
-            font-size: 1.2rem;
+            padding: 6px 12px;
+            font-size: 1.1rem;
             box-shadow: 3px 3px 0px var(--accent-red);
         }
 
@@ -225,7 +268,7 @@
         .badges {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 14px;
         }
 
         .badge-btn {
@@ -252,12 +295,10 @@
             transition: filter 0.2s, opacity 0.2s;
         }
 
-        /* Inactivo: atenuado */
         .badge-btn:not(.active) .badge-card-img {
             filter: grayscale(85%) contrast(85%) opacity(0.55);
         }
 
-        /* Activo / conquistado: a todo color con badge */
         .badge-btn.active .badge-card-img {
             filter: none;
             opacity: 1;
@@ -281,6 +322,195 @@
             pointer-events: none;
         }
 
+        /* ============================================================ */
+        /* ESTILOS PARA LA SECCIÓN JERARQUÍA Y MÍSTICA (TAB 2)          */
+        /* ============================================================ */
+        .info-section {
+            background-color: var(--card-bg);
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 8px 8px 0px var(--border-color);
+            padding: 30px;
+            margin-bottom: 35px;
+        }
+
+        .section-banner {
+            background: var(--accent-red);
+            color: #fff;
+            padding: 10px 18px;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            border: 3px solid var(--border-color);
+            box-shadow: 5px 5px 0px var(--border-color);
+            display: inline-block;
+            margin-bottom: 25px;
+            transform: rotate(-0.5deg);
+        }
+
+        .beret-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .beret-card {
+            border: 4px solid var(--border-color);
+            box-shadow: 6px 6px 0px var(--border-color);
+            padding: 20px;
+            background: #fff;
+        }
+
+        .beret-card.blue { border-top: 16px solid #1A365D; }
+        .beret-card.red { border-top: 16px solid #C53030; }
+        .beret-card.black { border-top: 16px solid #1a1a1a; }
+
+        .beret-title {
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .beret-role {
+            font-size: 0.95rem;
+            background: var(--accent-yellow);
+            display: inline-block;
+            padding: 4px 8px;
+            border: 2px solid #000;
+            margin-bottom: 12px;
+        }
+
+        .beret-desc {
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* REGLAS Y PEDAGOGÍA BOX */
+        .pedagogy-box {
+            background: #fff;
+            border: 4px solid var(--border-color);
+            box-shadow: 6px 6px 0px var(--border-color);
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .quote-banner {
+            background: var(--accent-yellow);
+            border: 3px solid var(--border-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            padding: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 15px 0 25px 0;
+            text-transform: uppercase;
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .step-item {
+            background: var(--card-bg);
+            border: 3px solid var(--border-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            padding: 15px;
+        }
+
+        .step-number {
+            font-size: 1.8rem;
+            color: var(--accent-red);
+            margin-bottom: 5px;
+        }
+
+        .step-text {
+            font-family: Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        /* ITINERARIOS (TAB 3) */
+        .itinerary-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stage-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--card-bg);
+            border: 3px solid var(--border-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .stage-btn.active {
+            background: var(--accent-red);
+            color: white;
+            box-shadow: 2px 2px 0px var(--border-color);
+            transform: translate(2px, 2px);
+        }
+
+        .encuentros-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .encuentro-card {
+            background: #fff;
+            border: 3px solid var(--border-color);
+            box-shadow: 5px 5px 0px var(--border-color);
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: all 0.1s;
+        }
+
+        .encuentro-card:hover {
+            background: var(--card-bg);
+        }
+
+        .encuentro-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+        }
+
+        .encuentro-badge {
+            background: var(--accent-yellow);
+            padding: 3px 10px;
+            border: 2px solid #000;
+            font-size: 0.85rem;
+        }
+
+        .encuentro-detail {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 3px dashed var(--border-color);
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        .encuentro-card.open .encuentro-detail {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .control-group {
                 flex-direction: column;
@@ -296,9 +526,10 @@
 </head>
 <body>
     <div class="container">
+        <!-- HEADER -->
         <header>
             <h1>Equipo Pioneros</h1>
-            <p>¡Abre caminos! - Control de Insignias</p>
+            <p>¡Abre caminos! - Juventud Masculina</p>
             <div class="status-bar">
                 <div class="counter" id="counter">Total Cargados: 0</div>
                 <div class="sync-badge">
@@ -308,17 +539,162 @@
             </div>
         </header>
 
-        <div class="controls">
-            <div class="control-group">
-                <input type="text" id="newPioneroName" placeholder="NOMBRE DEL PIONERO...">
-                <button class="add-btn" id="addBtn">Agregar</button>
+        <!-- TABS DE NAVEGACIÓN -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('tab-control')">🚩 Control del Equipo</button>
+            <button class="tab-btn" onclick="switchTab('tab-mistica')">⚔️ Jerarquía y Mística</button>
+            <button class="tab-btn" onclick="switchTab('tab-itinerario')">📖 Guía de Encuentros</button>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB 1: CONTROL DEL EQUIPO                  -->
+        <!-- ========================================== -->
+        <div id="tab-control" class="tab-content active">
+            <div class="controls">
+                <div class="control-group">
+                    <input type="text" id="newPioneroName" placeholder="NOMBRE DEL PIONERO...">
+                    <button class="add-btn" id="addBtn">Agregar</button>
+                </div>
+                <div class="control-group">
+                    <input type="text" id="searchBar" placeholder="🔍 BUSCAR PIONERO...">
+                </div>
             </div>
-            <div class="control-group">
-                <input type="text" id="searchBar" placeholder="🔍 BUSCAR PIONERO...">
+
+            <div class="grid" id="pionerosGrid"></div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB 2: JERARQUÍA Y MÍSTICA                 -->
+        <!-- ========================================== -->
+        <div id="tab-mistica" class="tab-content">
+            <!-- JERARQUÍA DE BOINAS -->
+            <div class="info-section">
+                <div class="section-banner">1. La Jerarquía de la Rama: Las Boinas</div>
+                <p style="font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 20px;">
+                    En la Juventud Masculina de Pioneros, el color de la Boina no es un adorno: representa el compromiso, la consagración y el cargo de cada uno frente a Dios y la Mater.
+                </p>
+                <div class="beret-grid">
+                    <div class="beret-card blue">
+                        <div class="beret-title">🧢 Boina Azul</div>
+                        <div class="beret-role">Pioneros (Chicos)</div>
+                        <p class="beret-desc">
+                            Representa la <strong>Bandera de Pioneros y el Manto de María</strong>. La conquistan y usan los pioneros al culminar con éxito la Etapa Bandera. Expresa que son un grupo escogido y protegido directamente por la Mater.
+                        </p>
+                    </div>
+
+                    <div class="beret-card red">
+                        <div class="beret-title">🔴 Boina Roja</div>
+                        <div class="beret-role">Dirigentes y Jefes</div>
+                        <p class="beret-desc">
+                            Representa la <strong>sangre derramada y la entrega heroica</strong> de todos los héroes mártires de Schoenstatt. La portan los encargados de grupo y dirigentes que conducen a los pioneros hacia sus ideales.
+                        </p>
+                    </div>
+
+                    <div class="beret-card black">
+                        <div class="beret-title">⚫ Boina Negra</div>
+                        <div class="beret-role">Asesores y Sacerdotes</div>
+                        <p class="beret-desc">
+                            Representa a las <strong>Cruces Negras</strong> (los seminaristas y congregantes caídos en el frente de batalla, como José Engling). La usan los Asesores y Padres que acompañan espiritualmente la Rama.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ÓRGANOS Y ROLES -->
+            <div class="info-section">
+                <div class="section-banner">2. Órganos y Estructura del Grupo</div>
+                <div class="pedagogy-box" style="margin-top: 0;">
+                    <ul style="font-family: Arial, sans-serif; font-weight: bold; line-height: 1.6; margin: 0; padding-left: 20px;">
+                        <li><strong>El Encargado de Grupo:</strong> Hermano mayor y formador. Tiene la regla de oro: <em>"Como encargado llegas primero y te vas último"</em> y <em>"Un grupo se dirige en el Santuario"</em>.</li>
+                        <li style="margin-top: 10px;"><strong>La Corte de Honor:</strong> Tribunal integrado por el Encargado de Grupo, el Jefe de Pioneros y el Asesor/Jefe de Rama. Toma las <em>"Pruebas de Superación"</em> antes de que los chicos puedan recibir cada insignia o sellar sus pactos.</li>
+                        <li style="margin-top: 10px;"><strong>El Jefe de Pioneros:</strong> Coordina todos los grupos y asegura la unidad del itinerario pedagógico en la comunidad.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MÍSTICA, LEMA Y ORACIÓN -->
+            <div class="info-section">
+                <div class="section-banner">3. Mística y Grito del Pionero</div>
+                <div class="quote-banner">
+                    Encargado grita: <strong>"¡PIONERO DE SCHOENSTATT!"</strong><br>
+                    Responden todos: <strong>"¡ABRE CAMINOS!"</strong>
+                </div>
+
+                <div class="pedagogy-box">
+                    <h3 style="margin-top: 0; text-transform: uppercase;">¿Qué significa ser Pionero?</h3>
+                    <ul style="font-family: Arial, sans-serif; font-weight: bold; line-height: 1.6;">
+                        <li><strong>Somos los primeros</strong> que nos arriesgamos a abrir un camino nuevo.</li>
+                        <li><strong>Somos los más audaces:</strong> no mandamos a los otros delante nuestro; con nuestra vida demostramos lo que queremos y damos el ejemplo.</li>
+                        <li><strong>Somos perseverantes:</strong> las dificultades no nos asustan, nos encantan los desafíos.</li>
+                        <li><strong>Sabemos que Dios quiere hacer algo</strong> grande con nuestra vida y estamos dispuestos a responderle.</li>
+                    </ul>
+
+                    <div style="background: var(--card-bg); border: 3px solid #000; padding: 18px; margin-top: 20px;">
+                        <h4 style="margin: 0 0 10px 0; text-transform: uppercase; color: var(--accent-red);">📜 Oración Oficial del Pionero</h4>
+                        <p style="font-family: Georgia, serif; font-style: italic; font-size: 1.05rem; line-height: 1.5; margin: 0;">
+                            "Querida Madre y Reina de los Pioneros: desde el Santuario te pido tu bendición. Acompáñame y guíame en este día para seguir a Jesús, como lo hizo José, mi hermano mayor. Con él quiero ser: recio en la lucha, libre para servir con alegría y valiente apóstol de tu Reino. Te ofrezco mi Capital de Gracias. Ayuda a mi grupo a vivir heroicamente la ley del Pionero para abrir camino a un Mundo Nuevo. Amén."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CÓMO ES UN ENCUENTRO -->
+            <div class="info-section">
+                <div class="section-banner">4. ¿Cómo se vive un Encuentro de Pioneros?</div>
+                <p style="font-family: Arial, sans-serif; font-weight: bold;">
+                    <strong>¡Hablamos de ENCUENTROS, no de reuniones!</strong> La pedagogía de pioneros acentúa el carácter vital, activo y fraterno. Todos los encuentros deben contar con un espacio amplio y un deporte/juego.
+                </p>
+
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-text">Oración Inicial frente a la imagen o Santuario.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-text">Revisión vivencial del Propósito de la semana anterior.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-text">Relato o Historia viva (José Engling, San Pablo, P. Kentenich). ¡No leer, contar con pasión!</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">04</div>
+                        <div class="step-text">Juego Pedagógico o Picado de Fútbol / Rugby (esencial para forjar comunidad).</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">05</div>
+                        <div class="step-text">Fijación de un nuevo Propósito semanal (para el Capital de Gracias).</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">06</div>
+                        <div class="step-text">Oración Final y Grito de Pioneros.</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="grid" id="pionerosGrid"></div>
+        <!-- ========================================== -->
+        <!-- TAB 3: GUÍA DE ENCUENTROS                  -->
+        <!-- ========================================== -->
+        <div id="tab-itinerario" class="tab-content">
+            <div class="info-section" style="margin-bottom: 20px;">
+                <div class="section-banner" style="margin-bottom: 15px;">Itinerario Pedagógico Completo</div>
+                <p style="font-family: Arial, sans-serif; font-weight: bold; margin: 0;">
+                    Selecciona una de las 4 etapas para consultar la guía oficial de encuentros, objetivos y dinámicas de juego:
+                </p>
+            </div>
+
+            <div class="itinerary-selector">
+                <button class="stage-btn active" onclick="showStage('bandera')">🚩 Etapa Bandera (13)</button>
+                <button class="stage-btn" onclick="showStage('santuario')">📍 Etapa Santuario (15)</button>
+                <button class="stage-btn" onclick="showStage('cruz')">⚔️ Etapa Cruz Espada (23)</button>
+                <button class="stage-btn" onclick="showStage('corona')">👑 Etapa Corona (25)</button>
+            </div>
+
+            <!-- LISTA DE ENCUENTROS DINÁMICA -->
+            <div class="encuentros-list" id="encuentrosContainer"></div>
+        </div>
     </div>
 
     <!-- Firebase SDK v10 (Modular ESM via CDN) -->
@@ -391,7 +767,6 @@
                 console.error("Error en Firestore:", error);
                 elements.syncDot.style.background = '#e53e3e';
                 elements.syncText.textContent = 'Error de permisos';
-                alert('Atención Firestore: ' + error.message);
             });
         } catch(e) {
             console.error("Error conectando:", e);
@@ -524,6 +899,140 @@
                 elements.grid.appendChild(card);
             });
         }
+    </script>
+
+    <!-- Script de navegación y datos de encuentros -->
+    <script>
+        // Manejo de Tabs
+        window.switchTab = function(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        };
+
+        // Base de datos de los encuentros según los 4 itinerarios pedagógicos
+        const encuentrosData = {
+            bandera: [
+                { num: 1, title: "¿Qué son los Pioneros de Schoenstatt? Su mística", obj: "Introducir a los chicos en el lema 'Pionero de Schoenstatt, abre camino'.", juego: "Rescatar la Botella", relato: "Martin Luther King y Joao Pozzobon." },
+                { num: 2, title: "Los Pioneros tenemos un hermano mayor: José Engling", obj: "Primer contacto vital con José Engling.", juego: "Guerra de Misiones", relato: "Anécdotas en la trinchera ('Yo voy en tu lugar' y 'El mejor del regimiento')." },
+                { num: 3, title: "Los Pioneros tenemos un Santo Patrono: San Pablo", obj: "Conocer la conversión y entrega de San Pablo.", juego: "Receta Mágica", relato: "De Saulo perseguidor al Apóstol de las gentes." },
+                { num: 4, title: "Los Pioneros rezamos una oración", obj: "Aprender y memorizar la Oración del Pionero.", juego: "El Barco", relato: "La abandonada capilla de San Roque." },
+                { num: 5, title: "La Bandera de los Pioneros I: El Santuario", obj: "Descubrir el Santuario como hogar y taller.", juego: "Los Patriotas", relato: "Las legiones romanas y su estandarte sagrado." },
+                { num: 6, title: "La Bandera de los Pioneros II: La Corona", obj: "Primer contacto filial con la Mater como Reina.", juego: "Defendiendo a la Reina", relato: "Maximiliano Brünner y 'Nuestra vida por nuestra Reina'." },
+                { num: 7, title: "La Bandera de los Pioneros III: La Cruz Espada y el Mundo", obj: "Despertar el espíritu apostólico y pintar la Bandera del grupo.", juego: "Pintar la Bandera", relato: "El círculo blanco, el anillo de unión y las 12 puntas." },
+                { num: 8, title: "Los Pioneros tenemos Aventuras I (Preparación)", obj: "Preparar una actividad apostólica o vivencia en común.", juego: "Ficha Aventura", relato: "Servir al prójimo: hospital, alimentos o misión." },
+                { num: 9, title: "Realización de la Aventura y Evaluación", obj: "Vivencia real de la actividad y reflexión grupal.", juego: "Evaluación grupal", relato: "Puesta en común de lo vivido." },
+                { num: 10, title: "Primera Ley: El Pionero es auténtico, libre y responsable", obj: "Introducir a la ley de honor de los Pioneros.", juego: "Tortugas y Liebres", relato: "P. Franz Reinisch: mártir de la libertad de conciencia." },
+                { num: 11, title: "Los Pioneros tenemos un Padre Pionero: P. Kentenich", obj: "Descubrir al Padre Kentenich como educador y padre.", juego: "Cuadrado Oscuro", relato: "El 27 de octubre de 1912: 'Les pertenece mi corazón'." },
+                { num: 12, title: "Presentación del símbolo personal: La Boina", obj: "Presentar la Boina Azul y la Prueba de Superación.", juego: "Ranger Ball", relato: "Los caballeros en las Cruzadas velando sus armas." },
+                { num: 13, title: "Explicación del Rito de entrega de la Boina", obj: "Preparar y ensayar el compromiso formal para el Campamento.", juego: "Enredos en 3D", relato: "Rito solemne con bendición sacerdotal." }
+            ],
+            santuario: [
+                { num: 1, title: "El Santuario: lugar de encuentro con Dios", obj: "Descubrir cómo Dios y María se manifiestan en los Santuarios.", juego: "Los Bolsillos", relato: "Virgen de Guadalupe, Lourdes, Fátima y Pompeya." },
+                { num: 2, title: "El Santuario: lugar de Alianza", obj: "Comprender la Alianza de Amor como renovación del Bautismo.", juego: "Campeonato de Gymkhana", relato: "La Alianza con Noé en el Génesis." },
+                { num: 3, title: "El Santuario: sede del Mundo Nuevo", obj: "Forjar el Hombre Nuevo frente al vacío del Mundo Viejo.", juego: "Collage comparativo", relato: "Diagnóstico social del Padre Kentenich." },
+                { num: 4, title: "Primera peregrinación al Santuario o Ermita", obj: "Vincular vivencialmente a los chicos y enterrar la foto de grupo.", juego: "Peregrinación a pie", relato: "Las 3 Gracias del Santuario: Cobijamiento, Transformación y Envío." },
+                { num: 5, title: "El Capital de Gracias: Alma del Santuario", obj: "Profundizar en 'Nada sin Ti, nada sin nosotros'.", juego: "Box a ciegas", relato: "Parábola de los Talentos." },
+                { num: 6, title: "Segunda Ley: El Pionero es generoso y se exige al máximo", obj: "Experimentar la magnanimidad y la libertad interior.", juego: "Marcando Cruces", relato: "El cuento de los dos mares de Palestina." },
+                { num: 7, title: "Moisés: Pionero exigente y generoso", obj: "Descubrir a Moisés como conductor de un pueblo.", juego: "Las Hinchadas", relato: "La Alianza del Sinaí y el diálogo cara a cara con Dios." },
+                { num: 8, title: "San Pablo y los primeros cristianos", obj: "Conocer el celo misionero y las cartas de San Pablo.", juego: "Pasar el Reto", relato: "2ª Corintios: fatigas y naufragios de un apóstol." },
+                { num: 9, title: "Novena Ley: El Pionero trabaja bien y con alegría", obj: "Fiel y fidelísimo cumplimiento del deber.", juego: "Carniceros y Carpinteros", relato: "El P. Kentenich en Dachau limpiando la bicicleta con alegría." },
+                { num: 10, title: "Construcción del Santuario de Grupo", obj: "Acentuar la pertenencia construyendo el Santuario de madera.", juego: "Taller manual", relato: "Lijado, bisagras y entronización de las estampas." },
+                { num: 11, title: "Segunda peregrinación: Bendición del Santuario", obj: "Bendecir el Santuario de grupo en el Santuario.", juego: "Peregrinación solemne", relato: "José Engling rezando descalzo para no ensuciar el piso." },
+                { num: 12, title: "Sexta Ley: El Pionero respeta a los demás", obj: "Aprender el respeto de hombre hacia la mujer y los débiles.", juego: "El Nudo", relato: "El Mundo Nuevo es un mundo de respeto y nobleza." },
+                { num: 13, title: "El Pionero promueve la dignidad del hombre", obj: "Mirar las virtudes en lugar de los defectos de los otros.", juego: "Bulldog", relato: "Cuento de la Asamblea en la Carpintería." },
+                { num: 14, title: "Presentación de afiches y del Símbolo de la Etapa", obj: "Conocer el Broche de Santuario y la Corte de Honor.", juego: "Concurso de Afiches", relato: "Preparación para la entrega del Pin en el Campamento de Verano." }
+            ],
+            cruz: [
+                { num: 1, title: "Presentación de la Etapa Cruz Espada", obj: "Desafío de ser otro José Engling y tomar su posta.", juego: "Pares o Impares", relato: "¿Qué significa ser un héroe generoso hoy?" },
+                { num: 2, title: "Asumiendo la Etapa Cruz Espada sin restricciones", obj: "Prueba de valor nocturna y firma solemne de compromiso.", juego: "Prueba de Valor", relato: "Vigilia en el Santuario y bendición con imposición de manos." },
+                { num: 3, title: "Cuarta Ley: Amor puro y varonil I", obj: "Autoeducación de los instintos; el cuerpo es Templo de Dios.", juego: "Bombardeo", relato: "Oración 'Por tu pureza' del Padre Kentenich." },
+                { num: 4, title: "Amor puro y varonil II: Figuras Femeninas", obj: "Descubrir el valor y la dignidad de la mujer.", juego: "Bull Dog Inglés", relato: "Laura Vicuña, Madre Teresa, Santa Teresa de los Andes." },
+                { num: 5, title: "Amor puro y varonil III: Charla con una mujer de Schoenstatt", obj: "Infundir pureza y caballerosidad cristiana.", juego: "El Canguro", relato: "¿Qué espera una mujer de un caballero de María?" },
+                { num: 6, title: "Quinta Ley: Toma la iniciativa para servir I", obj: "Vencer la comodidad y la pasividad del egoísmo.", juego: "El Capitán", relato: "El hombre con los árboles (Eleazar Bouffier)." },
+                { num: 7, title: "Toma la iniciativa para servir II: Aventura de Servicio", obj: "Planificar y realizar una obra concreta en el barrio o parroquia.", juego: "¿Qué hizo?", relato: "Parábola del Buen Samaritano." },
+                { num: 8, title: "Séptima Ley: Solidaridad y fidelidad en la amistad I", obj: "Vínculos firmes de amistad cristiana.", juego: "Basefútbol", relato: "Cuento: Entre el cielo y el infierno (los tenedores largos)." },
+                { num: 9, title: "Solidaridad y fidelidad en la amistad II", obj: "Elaborar el Decálogo de la Amistad del grupo.", juego: "Carrera de Carros", relato: "Jesucristo: el amigo fiel que dio la vida por los suyos." },
+                { num: 10, title: "Solidaridad y fidelidad en la amistad III", obj: "Don Bosco como amigo y padre de los jóvenes.", juego: "La Caza del Oso", relato: "El carisma salesiano y la juventud." },
+                { num: 11, title: "Aventura: Excursión de Grupo", obj: "Reafirmar la fraternidad y anunciar el Pacto con José Engling.", juego: "Excursión y campamento", relato: "Aceptar la posta del hermano mayor." },
+                { num: 12, title: "Duodécima Ley: El Pionero es un Apóstol de Cristo", obj: "Testimonio del ejemplo, de la palabra y de la acción.", juego: "Carrera de Velas", relato: "El envío apostólico: 'Vayan por todo el mundo'." },
+                { num: 13, title: "José Engling y el Apostolado", obj: "Apostolado silencioso de alma a alma.", juego: "Contrabando de Fuego", relato: "Cartas desde el frente de batalla y trabajo de prefecto." },
+                { num: 14, title: "Aventura Apostólica de Grupo", obj: "Requisito obligatorio previo para sellar el Pacto.", juego: "Obstáculos Humanos", relato: "Misión apostólica en terreno." },
+                { num: 15, title: "Preparación al Pacto con José Engling", obj: "Fijar fecha, tareas y elegir el modelo de Cruz Espada.", juego: "El cazador, gorrión y abeja", relato: "Conciencia del compromiso solemne." },
+                { num: 16, title: "Celebración del Pacto con José Engling", obj: "Firma solemne del libro y entrega de la Cruz Espada.", juego: "Vigilia y Misa Solemne", relato: "Rito de consagración frente al altar." },
+                { num: 17, title: "Recordamos el ejemplo misionero de San Pablo", obj: "Contagiar el espíritu misionero paulino.", juego: "Carrera de Tortugas", relato: "Hechos de los Apóstoles: naufragios y defensa de la fe." },
+                { num: 18, title: "El apostolado de la Iglesia: El Santo Padre", obj: "Mostrar al Papa como sucesor de Pedro y Apóstol de Cristo.", juego: "Video-debate", relato: "Viajes apostólicos de Juan Pablo II." },
+                { num: 19, title: "Visita a una Comunidad Misionera", obj: "Conocer en persona una obra de evangelización viva.", juego: "Visita apostólica", relato: "Anotar carisma y testimonio de vida consagrada." },
+                { num: 20, title: "La actitud apostólica del Pionero de Schoenstatt", obj: "Revisar y profundizar el Pacto con José Engling.", juego: "Familias de Pájaros", relato: "Vocación al apostolado en la vida diaria." },
+                { num: 21, title: "El apostolado de Schoenstatt en el mundo", obj: "Testimonios de jóvenes y familias schoenstattianas.", juego: "El Fuerte", relato: "Cómo transformar la sociedad desde el carisma." },
+                { num: 22, title: "María: Compañera y Colaboradora de todo Pionero", obj: "Sentir a María como aliada en cada tarea apostólica.", juego: "Gol de Trapo", relato: "María en Caná, la Cruz y Pentecostés." },
+                { num: 23, title: "Inspirados en el Padre Kentenich: Culminación de Etapa", obj: "Investigación sobre las visitas del Fundador a América Latina.", juego: "Mini campamento", relato: "Huellas de un Padre: fidelidad y audacia apostólica." }
+            ],
+            corona: [
+                { num: 1, title: "Tercera Ley: El Pionero sabe enfrentar y superar los obstáculos", obj: "Los obstáculos son tareas y desafíos para forjar el carácter.", juego: "Cazador y Zorro", relato: "Gral. San Martín cruzando los Andes y el cuento de los Puercoespines." },
+                { num: 2, title: "El ejemplo de José Engling con sus obstáculos", obj: "Superar defectos personales y ofrecerlos al Capital de Gracias.", juego: "Los Abogados", relato: "José de muchacho campesino a orador y líder respetado." },
+                { num: 3, title: "Conozcamos a José de Anchieta", obj: "Vencer tentaciones por amor a María.", juego: "El Elefantito", relato: "Escribir 3000 versos en la arena de la playa brasileña." },
+                { num: 4, title: "María en la Biblia", obj: "Descubrir las actitudes de María en los Evangelios.", juego: "Carretillas Rebeldes", relato: "La Anunciación, la Visitación y al pie de la Cruz." },
+                { num: 5, title: "María en la historia de la Iglesia", obj: "María auxilio de los cristianos en momentos decisivos.", juego: "¿Quién sabe más?", relato: "Pentecostés y la Batalla de Lepanto." },
+                { num: 6, title: "María, Madre de todos los hombres", obj: "Relación filial y personal con la Mater.", juego: "Informe Policial", relato: "Testimonios de Haydn, Bolívar y San Martín consagrado al Carmen." },
+                { num: 7, title: "Decimoprimera Ley: El Pionero ama y sirve a María", obj: "El amor a María transforma las personalidades más rebeldes.", juego: "Pioneros Chocadores", relato: "La conmovedora conversión de Maximiliano Brünner." },
+                { num: 8, title: "María, Madre del Pionero", obj: "Descubrir a María en la transición de la adolescencia.", juego: "Rodeo", relato: "Ecce Mater Tua: la Madre que nunca nos abandona." },
+                { num: 9, title: "María, Reina del Pionero", obj: "Despertar el espíritu noble de caballeros de la Reina.", juego: "Lucha en el Cuadrado", relato: "Caballerosidad medieval y servicio apostólico moderno." },
+                { num: 10, title: "Construcción del Cuadro de la Mater", obj: "Fabricar el cuadro de madera con forma de Santuario.", juego: "Taller artesanal", relato: "Lijar, pintar y dejar espacio arriba para la futura Corona." },
+                { num: 11, title: "María de Guadalupe", obj: "Conocer el primer gran Santuario de América Latina.", juego: "Familia de Locos", relato: "San Juan Diego y el milagro del manto en el Tepeyac." },
+                { num: 12, title: "María en Luján: Santuario Nacional", obj: "Interiorizarse en la historia religiosa argentina.", juego: "Los Dos Ciegos", relato: "La carreta detenida en 1630 y el negrito Manuel." },
+                { num: 13, title: "Aventura: Bicicleteada al Santuario o Ermita", obj: "Peregrinación en caravana en dos ruedas.", juego: "Bicicleteada organizada", relato: "Esfuerzo físico y oración compartida en el camino." },
+                { num: 14, title: "Octava Ley: El Pionero ama y cuida la naturaleza", obj: "Responsabilidad ecológica como hijos de Dios.", juego: "Submarinos y Minas", relato: "El cuidado de la creación frente a la destrucción." },
+                { num: 15, title: "El ejemplo de San Francisco de Asís", obj: "Conocer al patrono de la ecología y la fraternidad.", juego: "El Arrebato", relato: "El hermano lobo de Gubbio y el cántico de las criaturas." },
+                { num: 16, title: "Aventura: Visita al Zoo o Jardín Botánico", obj: "Conocimiento práctico guiado de flora y fauna.", juego: "Salida de campo", relato: "Plantar una flor en el Santuario o en casa." },
+                { num: 17, title: "El Pionero es amigo de Cristo", obj: "Fidelidad íntima en la amistad con Jesús.", juego: "El Reloj", relato: "Cristo en el campo de concentración de Dachau." },
+                { num: 18, title: "Santa Misa con Adoración Eucarística", obj: "Encuentro personal con Cristo en el Santísimo Sacramento.", juego: "Picado de fútbol", relato: "15 minutos de silencio, adoración y cantos." },
+                { num: 19, title: "Torneo de Periodismo", obj: "Fomentar la escritura y redacción en equipo.", juego: "Redacción de Diario", relato: "Crear una revista del grupo con noticias y valores." },
+                { num: 20, title: "Nos preparamos para la Promesa I", obj: "Comprender la Promesa como pacto de amor con la Reina.", juego: "Veneno", relato: "La consagración del Padre Kentenich a los 9 años en el orfanato." },
+                { num: 21, title: "Nos preparamos para la Promesa II", obj: "Firmeza y fidelidad en las cosas cotidianas.", juego: "Mongoles Impasibles", relato: "El niño de la sal junto a Mahatma Gandhi." },
+                { num: 22, title: "Nos preparamos para la Promesa III", obj: "Ensayo práctico del rito solemne y construcción de la Corona.", juego: "Pelota Soplada", relato: "Los papás entregan su hijo a la Virgen en el altar." },
+                { num: 23, title: "Ritual de la Promesa y Coronación", obj: "Coronación del cuadro personal en el Campamento de Verano.", juego: "Misa Solemne", relato: "Los papás: 'Madre, te entregamos a nuestro hijo, ¡cuídalo!'." },
+                { num: 24, title: "Conclusión de la Etapa Corona", obj: "Acción de gracias por los años vividos como Pioneros.", juego: "Campamento de Grupo", relato: "Recapitulación de la historia y vivencias del grupo." },
+                { num: 25, title: "Paso a los Secundarios de Schoenstatt", obj: "Traspaso orgánico a la siguiente etapa de la Juventud Masculina.", juego: "Jornada compartida", relato: "'¡Pionero se es siempre!': bienvenida de los Secundarios." }
+            ]
+        };
+
+        // Renderizado de lista de encuentros
+        window.showStage = function(stageKey) {
+            document.querySelectorAll('.stage-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const container = document.getElementById('encuentrosContainer');
+            const data = encuentrosData[stageKey] || [];
+            
+            container.innerHTML = '';
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'encuentro-card';
+                card.onclick = () => card.classList.toggle('open');
+
+                card.innerHTML = `
+                    <div class="encuentro-header">
+                        <span><strong>#${item.num}</strong> ${item.title}</span>
+                        <span class="encuentro-badge">🎮 ${item.juego}</span>
+                    </div>
+                    <div class="encuentro-detail">
+                        <p style="margin: 0 0 8px 0;"><strong>🎯 Objetivo:</strong> ${item.obj}</p>
+                        <p style="margin: 0 0 8px 0;"><strong>📖 Relato / Mística:</strong> ${item.relato}</p>
+                        <p style="margin: 0; color: #718096; font-size: 0.85rem;"><em>(Haz clic para cerrar o abrir detalles)</em></p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        };
+
+        // Cargar por defecto la primera etapa
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultBtn = document.querySelector('.stage-btn');
+            if (defaultBtn) defaultBtn.click();
+        });
     </script>
 </body>
 </html>
