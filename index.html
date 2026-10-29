@@ -509,6 +509,91 @@
         }
 
         /* ITINERARIOS (TAB 3) */
+        .pdf-downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .pdf-card {
+            background: #ffffff;
+            border: 4px solid var(--border-color);
+            box-shadow: 6px 6px 0px var(--border-color);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            transition: transform 0.1s;
+        }
+
+        .pdf-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px var(--border-color);
+        }
+
+        .pdf-card-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pdf-card-top img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border: 3px solid #000;
+            background: var(--card-bg);
+            padding: 4px;
+        }
+
+        .pdf-card-tag {
+            background: var(--accent-yellow);
+            border: 2px solid #000;
+            padding: 2px 8px;
+            font-size: 0.72rem;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .pdf-card-title {
+            font-size: 1.05rem;
+            line-height: 1.15;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .pdf-card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .pdf-btn {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background: var(--accent-red);
+            border: 3px solid #000;
+            box-shadow: 3px 3px 0px #000;
+            padding: 8px 10px;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .pdf-btn.secondary {
+            background: var(--bg-color);
+        }
+
+        .pdf-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px #000;
+        }
+
         .itinerary-selector {
             display: flex;
             gap: 10px;
@@ -888,9 +973,85 @@ también nosotros con todo el corazón.</div>
         <!-- ========================================== -->
         <div id="tab-itinerario" class="tab-content">
             <div class="info-section" style="margin-bottom: 20px;">
-                <div class="section-banner" style="margin-bottom: 15px;">Itinerario Pedagógico Completo (76 Encuentros)</div>
+                <div class="section-banner" style="margin-bottom: 15px;">📄 Cuadernillos PDF Renovados (Estética Neo-Brutalista)</div>
+                <p style="font-family: Arial, sans-serif; font-weight: bold; margin: 0 0 12px 0;">
+                    Los 4 cuadernillos pedagógicos oficiales completos (relatos, metodologías, dinámicas, juegos y ritos) rediseñados con la estética de la app listos para abrir o descargar:
+                </p>
+                <div class="pdf-downloads-grid">
+                    <div class="pdf-card">
+                        <div class="pdf-card-top">
+                            <img src="card-boina.png" alt="Boina">
+                            <div>
+                                <span class="pdf-card-tag">CUADERNILLO 01</span>
+                                <h4 class="pdf-card-title">Etapa Bandera</h4>
+                            </div>
+                        </div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: bold;">
+                            13 Encuentros + Aventura + Rito de la Boina Azul.
+                        </div>
+                        <div class="pdf-card-actions">
+                            <a class="pdf-btn secondary" href="Cuadernillo-1-Etapa-Bandera.pdf" target="_blank">👁️ Ver PDF</a>
+                            <a class="pdf-btn" href="Cuadernillo-1-Etapa-Bandera.pdf" download>⬇️ Descargar</a>
+                        </div>
+                    </div>
+
+                    <div class="pdf-card">
+                        <div class="pdf-card-top">
+                            <img src="card-pin.png" alt="Pin Santuario">
+                            <div>
+                                <span class="pdf-card-tag">CUADERNILLO 02</span>
+                                <h4 class="pdf-card-title">Etapa Santuario</h4>
+                            </div>
+                        </div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: bold;">
+                            15 Encuentros + Santuario de Grupo + Rito del Pin.
+                        </div>
+                        <div class="pdf-card-actions">
+                            <a class="pdf-btn secondary" href="Cuadernillo-2-Etapa-Santuario.pdf" target="_blank">👁️ Ver PDF</a>
+                            <a class="pdf-btn" href="Cuadernillo-2-Etapa-Santuario.pdf" download>⬇️ Descargar</a>
+                        </div>
+                    </div>
+
+                    <div class="pdf-card">
+                        <div class="pdf-card-top">
+                            <img src="card-cruz.png" alt="Cruz Espada">
+                            <div>
+                                <span class="pdf-card-tag">CUADERNILLO 03</span>
+                                <h4 class="pdf-card-title">Etapa Cruz Espada</h4>
+                            </div>
+                        </div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: bold;">
+                            23 Encuentros + Pacto con José Engling + Apostolado.
+                        </div>
+                        <div class="pdf-card-actions">
+                            <a class="pdf-btn secondary" href="Cuadernillo-3-Etapa-Cruz-Espada.pdf" target="_blank">👁️ Ver PDF</a>
+                            <a class="pdf-btn" href="Cuadernillo-3-Etapa-Cruz-Espada.pdf" download>⬇️ Descargar</a>
+                        </div>
+                    </div>
+
+                    <div class="pdf-card">
+                        <div class="pdf-card-top">
+                            <img src="card-corona.png" alt="Corona">
+                            <div>
+                                <span class="pdf-card-tag">CUADERNILLO 04</span>
+                                <h4 class="pdf-card-title">Etapa Corona</h4>
+                            </div>
+                        </div>
+                        <div style="font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: bold;">
+                            25 Encuentros + Cuadro de la Mater + Promesa y Coronación.
+                        </div>
+                        <div class="pdf-card-actions">
+                            <a class="pdf-btn secondary" href="Cuadernillo-4-Etapa-Corona.pdf" target="_blank">👁️ Ver PDF</a>
+                            <a class="pdf-btn" href="Cuadernillo-4-Etapa-Corona.pdf" download>⬇️ Descargar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section" style="margin-bottom: 20px;">
+                <div class="section-banner" style="margin-bottom: 15px;">Itinerario Pedagógico Interactivo (76 Encuentros)</div>
                 <p style="font-family: Arial, sans-serif; font-weight: bold; margin: 0;">
-                    Selecciona una etapa para ver la estructura de cada encuentro, su objetivo, relato y juego:
+                    Selecciona una etapa para ver la estructura rápida de cada encuentro, su objetivo, relato y juego:
                 </p>
             </div>
 
