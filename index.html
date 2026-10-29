@@ -24,7 +24,7 @@
             color: var(--border-color);
             font-family: 'Arial Black', 'Segoe UI Black', Impact, sans-serif;
             margin: 0;
-            padding: 20px 15px 50px 15px;
+            padding: 20px 15px 60px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -33,7 +33,7 @@
 
         .container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1120px;
         }
 
         /* HEADER */
@@ -126,7 +126,7 @@
             flex: 1;
             min-width: 220px;
             padding: 16px 12px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-family: inherit;
             text-transform: uppercase;
             border: var(--border-width) solid var(--border-color);
@@ -323,13 +323,13 @@
         }
 
         /* ============================================================ */
-        /* ESTILOS PARA LA SECCIÓN JERARQUÍA Y MÍSTICA (TAB 2)          */
+        /* ESTILOS PARA EL MANUAL Y JERARQUÍA (TAB 2)                   */
         /* ============================================================ */
         .info-section {
             background-color: var(--card-bg);
             border: var(--border-width) solid var(--border-color);
             box-shadow: 8px 8px 0px var(--border-color);
-            padding: 30px;
+            padding: 28px;
             margin-bottom: 35px;
         }
 
@@ -337,12 +337,12 @@
             background: var(--accent-red);
             color: #fff;
             padding: 10px 18px;
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
             text-transform: uppercase;
             border: 3px solid var(--border-color);
             box-shadow: 5px 5px 0px var(--border-color);
             display: inline-block;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             transform: rotate(-0.5deg);
         }
 
@@ -360,9 +360,9 @@
             background: #fff;
         }
 
-        .beret-card.blue { border-top: 16px solid #1A365D; }
-        .beret-card.red { border-top: 16px solid #C53030; }
-        .beret-card.black { border-top: 16px solid #1a1a1a; }
+        .beret-card.blue { border-top: 18px solid #1A365D; }
+        .beret-card.red { border-top: 18px solid #C53030; }
+        .beret-card.black { border-top: 18px solid #1a1a1a; }
 
         .beret-title {
             font-size: 1.4rem;
@@ -383,17 +383,16 @@
             font-family: Arial, sans-serif;
             font-weight: 600;
             font-size: 1rem;
-            line-height: 1.4;
+            line-height: 1.45;
             margin: 0;
         }
 
-        /* REGLAS Y PEDAGOGÍA BOX */
         .pedagogy-box {
             background: #fff;
             border: 4px solid var(--border-color);
             box-shadow: 6px 6px 0px var(--border-color);
-            padding: 25px;
-            margin-top: 20px;
+            padding: 24px;
+            margin-top: 15px;
         }
 
         .quote-banner {
@@ -401,10 +400,66 @@
             border: 3px solid var(--border-color);
             box-shadow: 4px 4px 0px var(--border-color);
             padding: 15px;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             text-align: center;
             margin: 15px 0 25px 0;
             text-transform: uppercase;
+        }
+
+        .laws-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 14px;
+        }
+
+        .law-card {
+            background: #fff;
+            border: 3px solid var(--border-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .law-num {
+            background: var(--accent-red);
+            color: #fff;
+            border: 2px solid #000;
+            min-width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .law-text {
+            font-family: Arial, sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        .heroes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 20px;
+        }
+
+        .hero-card {
+            background: #fff;
+            border: 4px solid var(--border-color);
+            box-shadow: 6px 6px 0px var(--border-color);
+            padding: 20px;
+        }
+
+        .hero-tag {
+            background: var(--accent-yellow);
+            border: 2px solid #000;
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
         }
 
         .step-list {
@@ -432,7 +487,25 @@
             font-family: Arial, sans-serif;
             font-size: 0.95rem;
             font-weight: bold;
-            line-height: 1.3;
+            line-height: 1.35;
+        }
+
+        .chords-box {
+            background: #1a202c;
+            color: #f7fafc;
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0px #000;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            white-space: pre-wrap;
+            line-height: 1.4;
+            overflow-x: auto;
+            font-size: 0.95rem;
+        }
+
+        .chord-line {
+            color: var(--accent-yellow);
         }
 
         /* ITINERARIOS (TAB 3) */
@@ -488,6 +561,7 @@
             align-items: center;
             font-size: 1.15rem;
             text-transform: uppercase;
+            gap: 10px;
         }
 
         .encuentro-badge {
@@ -495,6 +569,7 @@
             padding: 3px 10px;
             border: 2px solid #000;
             font-size: 0.85rem;
+            white-space: nowrap;
         }
 
         .encuentro-detail {
@@ -541,9 +616,9 @@
 
         <!-- TABS DE NAVEGACIÓN -->
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('tab-control')">🚩 Control del Equipo</button>
-            <button class="tab-btn" onclick="switchTab('tab-mistica')">⚔️ Jerarquía y Mística</button>
-            <button class="tab-btn" onclick="switchTab('tab-itinerario')">📖 Guía de Encuentros</button>
+            <button class="tab-btn active" onclick="switchTab('tab-control', this)">🚩 Control del Equipo</button>
+            <button class="tab-btn" onclick="switchTab('tab-mistica', this)">⚔️ Manual y Jerarquía</button>
+            <button class="tab-btn" onclick="switchTab('tab-itinerario', this)">📖 Guía de Encuentros</button>
         </div>
 
         <!-- ========================================== -->
@@ -564,111 +639,245 @@
         </div>
 
         <!-- ========================================== -->
-        <!-- TAB 2: JERARQUÍA Y MÍSTICA                 -->
+        <!-- TAB 2: MANUAL DEL PIONERO Y JERARQUÍA      -->
         <!-- ========================================== -->
         <div id="tab-mistica" class="tab-content">
-            <!-- JERARQUÍA DE BOINAS -->
+            
+            <!-- 1. QUÉ SON LOS PIONEROS Y SCHOENSTATT -->
             <div class="info-section">
-                <div class="section-banner">1. La Jerarquía de la Rama: Las Boinas</div>
+                <div class="section-banner">1. ¿Qué son los Pioneros de Schoenstatt?</div>
+                <div class="pedagogy-box" style="margin-top: 0;">
+                    <p style="font-family: Arial, sans-serif; font-weight: bold; font-size: 1.05rem; line-height: 1.5; margin-top: 0;">
+                        Los Pioneros de Schoenstatt son jóvenes católicos de entre <strong>10 y 13 años</strong> que buscan vivir esta etapa de sus vidas de una manera diferente. Su motivación principal es el amor a Jesús y a María, cultivándolo en sus grupos y en la rama mediante campamentos, retiros, misiones, apostolados y encuentros semanales que los transforman en personas libres y apostólicas.
+                    </p>
+                    <p style="font-family: Arial, sans-serif; font-weight: 600; font-size: 1rem; line-height: 1.5; margin-bottom: 0;">
+                        Tienen la especial convicción de que el mundo necesita de Dios y de su testimonio: quieren <strong>abrir camino</strong> para que el mundo sea un verdadero Reino de Cristo, confiando siempre en la Santísima Virgen María desde el Santuario (fundado el 18 de Octubre de 1914 por el Padre José Kentenich junto a los primeros jóvenes congregantes en Alemania).
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. JERARQUÍA DE BOINAS Y ESTRUCTURA -->
+            <div class="info-section">
+                <div class="section-banner">2. Jerarquía de la Rama: Las Boinas y Cargos</div>
                 <p style="font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 20px;">
-                    En la Juventud Masculina de Pioneros, el color de la Boina no es un adorno: representa el compromiso, la consagración y el cargo de cada uno frente a Dios y la Mater.
+                    La Boina no es para hacer facha ni cubrirse del frío: nos identifica como grupo escogido por la Mater. Su color representa el cargo y misión dentro de la Rama:
                 </p>
                 <div class="beret-grid">
                     <div class="beret-card blue">
                         <div class="beret-title">🧢 Boina Azul</div>
-                        <div class="beret-role">Pioneros (Chicos)</div>
+                        <div class="beret-role">1° Escalafón: Pioneros</div>
                         <p class="beret-desc">
-                            Representa la <strong>Bandera de Pioneros y el Manto de María</strong>. La conquistan y usan los pioneros al culminar con éxito la Etapa Bandera. Expresa que son un grupo escogido y protegido directamente por la Mater.
+                            Representa la <strong>Bandera de Pioneros y el Manto de María</strong>. La usan todos los pioneros tras superar la Etapa Bandera y su Prueba de Superación.
                         </p>
                     </div>
 
                     <div class="beret-card red">
                         <div class="beret-title">🔴 Boina Roja</div>
-                        <div class="beret-role">Dirigentes y Jefes</div>
+                        <div class="beret-role">2° Escalafón: Dirigentes</div>
                         <p class="beret-desc">
-                            Representa la <strong>sangre derramada y la entrega heroica</strong> de todos los héroes mártires de Schoenstatt. La portan los encargados de grupo y dirigentes que conducen a los pioneros hacia sus ideales.
+                            Representa la <strong>sangre derramada de todos los héroes</strong> de Schoenstatt. La usan los Encargados de Grupo, Jefes de Pioneros y Jefes de Rama.
                         </p>
                     </div>
 
                     <div class="beret-card black">
                         <div class="beret-title">⚫ Boina Negra</div>
-                        <div class="beret-role">Asesores y Sacerdotes</div>
+                        <div class="beret-role">3° Escalafón: Asesores</div>
                         <p class="beret-desc">
-                            Representa a las <strong>Cruces Negras</strong> (los seminaristas y congregantes caídos en el frente de batalla, como José Engling). La usan los Asesores y Padres que acompañan espiritualmente la Rama.
+                            Representa a las <strong>Cruces Negras</strong> (los primeros congregantes caídos heroicamente en la Guerra). La usan los Sacerdotes y Asesores de la Rama.
                         </p>
                     </div>
                 </div>
-            </div>
 
-            <!-- ÓRGANOS Y ROLES -->
-            <div class="info-section">
-                <div class="section-banner">2. Órganos y Estructura del Grupo</div>
-                <div class="pedagogy-box" style="margin-top: 0;">
+                <div class="pedagogy-box" style="margin-top: 20px;">
+                    <h3 style="margin-top: 0; text-transform: uppercase;">Órganos de Conducción</h3>
                     <ul style="font-family: Arial, sans-serif; font-weight: bold; line-height: 1.6; margin: 0; padding-left: 20px;">
-                        <li><strong>El Encargado de Grupo:</strong> Hermano mayor y formador. Tiene la regla de oro: <em>"Como encargado llegas primero y te vas último"</em> y <em>"Un grupo se dirige en el Santuario"</em>.</li>
-                        <li style="margin-top: 10px;"><strong>La Corte de Honor:</strong> Tribunal integrado por el Encargado de Grupo, el Jefe de Pioneros y el Asesor/Jefe de Rama. Toma las <em>"Pruebas de Superación"</em> antes de que los chicos puedan recibir cada insignia o sellar sus pactos.</li>
-                        <li style="margin-top: 10px;"><strong>El Jefe de Pioneros:</strong> Coordina todos los grupos y asegura la unidad del itinerario pedagógico en la comunidad.</li>
+                        <li><strong>Encargado de Grupo:</strong> Dirige y forma vitalmente a su grupo. Regla fundamental: <em>"Como encargado llegas primero y te vas último"</em> y <em>"Un grupo se dirige en el Santuario"</em>.</li>
+                        <li><strong>Jefe de Pioneros / Sub-rama:</strong> Coordina a todos los encargados de grupo y vela por la mística común.</li>
+                        <li><strong>Corte de Honor:</strong> Tribunal formado por el Encargado, el Jefe de Pioneros y el Asesor. Evalúa a los chicos en la <em>"Prueba de Superación"</em> (máx. 3 faltas, capitalario completo, conocer el significado del símbolo y aprobar el examen) antes de recibir cada insignia.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- MÍSTICA, LEMA Y ORACIÓN -->
+            <!-- 3. LAS 12 LEYES DEL PIONERO -->
             <div class="info-section">
-                <div class="section-banner">3. Mística y Grito del Pionero</div>
-                <div class="quote-banner">
-                    Encargado grita: <strong>"¡PIONERO DE SCHOENSTATT!"</strong><br>
-                    Responden todos: <strong>"¡ABRE CAMINOS!"</strong>
+                <div class="section-banner">3. Las 12 Leyes del Pionero</div>
+                <p style="font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 18px;">
+                    Son el código de honor y el espejo donde se mira todo Pionero (representadas en las 12 puntas de la Cruz Espada):
+                </p>
+                <div class="laws-grid">
+                    <div class="law-card"><div class="law-num">1</div><div class="law-text">El pionero es libre, auténtico y responsable.</div></div>
+                    <div class="law-card"><div class="law-num">2</div><div class="law-text">El pionero es generoso y se exige al máximo.</div></div>
+                    <div class="law-card"><div class="law-num">3</div><div class="law-text">El pionero supera con ánimo los obstáculos.</div></div>
+                    <div class="law-card"><div class="law-num">4</div><div class="law-text">El pionero tiene un amor puro y varonil.</div></div>
+                    <div class="law-card"><div class="law-num">5</div><div class="law-text">El pionero toma la iniciativa de servir sin esperar recompensa.</div></div>
+                    <div class="law-card"><div class="law-num">6</div><div class="law-text">El pionero respeta a los demás.</div></div>
+                    <div class="law-card"><div class="law-num">7</div><div class="law-text">El pionero es solidario y fiel en la amistad.</div></div>
+                    <div class="law-card"><div class="law-num">8</div><div class="law-text">El pionero ama y cuida la naturaleza.</div></div>
+                    <div class="law-card"><div class="law-num">9</div><div class="law-text">El pionero trabaja bien y con alegría.</div></div>
+                    <div class="law-card"><div class="law-num">10</div><div class="law-text">El pionero es amigo de Cristo.</div></div>
+                    <div class="law-card"><div class="law-num">11</div><div class="law-text">El pionero ama y sirve a María.</div></div>
+                    <div class="law-card"><div class="law-num">12</div><div class="law-text">El pionero es siempre un apóstol.</div></div>
                 </div>
+            </div>
 
-                <div class="pedagogy-box">
-                    <h3 style="margin-top: 0; text-transform: uppercase;">¿Qué significa ser Pionero?</h3>
-                    <ul style="font-family: Arial, sans-serif; font-weight: bold; line-height: 1.6;">
-                        <li><strong>Somos los primeros</strong> que nos arriesgamos a abrir un camino nuevo.</li>
-                        <li><strong>Somos los más audaces:</strong> no mandamos a los otros delante nuestro; con nuestra vida demostramos lo que queremos y damos el ejemplo.</li>
-                        <li><strong>Somos perseverantes:</strong> las dificultades no nos asustan, nos encantan los desafíos.</li>
-                        <li><strong>Sabemos que Dios quiere hacer algo</strong> grande con nuestra vida y estamos dispuestos a responderle.</li>
-                    </ul>
-
-                    <div style="background: var(--card-bg); border: 3px solid #000; padding: 18px; margin-top: 20px;">
-                        <h4 style="margin: 0 0 10px 0; text-transform: uppercase; color: var(--accent-red);">📜 Oración Oficial del Pionero</h4>
-                        <p style="font-family: Georgia, serif; font-style: italic; font-size: 1.05rem; line-height: 1.5; margin: 0;">
-                            "Querida Madre y Reina de los Pioneros: desde el Santuario te pido tu bendición. Acompáñame y guíame en este día para seguir a Jesús, como lo hizo José, mi hermano mayor. Con él quiero ser: recio en la lucha, libre para servir con alegría y valiente apóstol de tu Reino. Te ofrezco mi Capital de Gracias. Ayuda a mi grupo a vivir heroicamente la ley del Pionero para abrir camino a un Mundo Nuevo. Amén."
-                        </p>
+            <!-- 4. SÍMBOLOS DE LA BANDERA -->
+            <div class="info-section">
+                <div class="section-banner">4. Los Símbolos de Nuestra Bandera</div>
+                <div class="beret-grid">
+                    <div class="hero-card">
+                        <div class="hero-tag">Hogar y Taller</div>
+                        <h3 style="margin: 5px 0 10px 0;">⛪ El Santuario</h3>
+                        <p class="beret-desc">Es el lugar santo donde nos encontramos con Dios (triángulo), con la Mater (corona) y con nuestros hermanos. Taller donde nos forjamos como Hombre Nuevo a través del Capital de Gracias.</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-tag">Realeza Mariana</div>
+                        <h3 style="margin: 5px 0 10px 0;">👑 La Corona</h3>
+                        <p class="beret-desc">María es nuestra Reina y despierta al héroe y caballero que hay en cada Pionero. Nos invita a conquistar todo lo grande y noble.</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-tag">Misión y Sacrificio</div>
+                        <h3 style="margin: 5px 0 10px 0;">⚔️ Cruz Espada y Mundo</h3>
+                        <p class="beret-desc"><strong>Círculo Blanco:</strong> el Mundo Nuevo de pureza y paz.<br><strong>Anillo Amarillo:</strong> vínculo de unión.<br><strong>Cruz Negra:</strong> las 4 dimensiones (Dios, demás, trabajo, sí mismo) y las Cruces Negras.<br><strong>Espada Roja:</strong> el ideal de San Pablo de "Abrir camino" con las 12 puntas de la Ley.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- CÓMO ES UN ENCUENTRO -->
+            <!-- 5. HÉROES Y PERSONALIDADES DE PIONEROS -->
             <div class="info-section">
-                <div class="section-banner">4. ¿Cómo se vive un Encuentro de Pioneros?</div>
+                <div class="section-banner">5. Padre Fundador, Patrono y Héroes</div>
+                <div class="heroes-grid">
+                    <div class="hero-card">
+                        <div class="hero-tag">Padre Pionero</div>
+                        <h3 style="margin: 5px 0;">P. José Kentenich (1885-1968)</h3>
+                        <p class="beret-desc">Fundador del Movimiento de Schoenstatt el 18 de octubre de 1914. Prisionero en el campo de concentración de Dachau y exiliado 14 años en Milwaukee. Nos dejó máximas como: <em>"El que quiere ganar los corazones, tiene que poner como prenda su propio corazón"</em> y <em>"Todo por amor, con alegría"</em>.</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-tag">Hermano Mayor</div>
+                        <h3 style="margin: 5px 0;">José Engling (1898-1918)</h3>
+                        <p class="beret-desc">Conocido como "El León de Cambrai". Primer pionero que vivió radicalmente el Capital de Gracias y ofreció su vida a la Mater en las trincheras de la Primera Guerra Mundial bajo el lema: <em>"Ser todo para todos y enteramente de María"</em>.</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-tag">Santo Patrono</div>
+                        <h3 style="margin: 5px 0;">Apóstol San Pablo</h3>
+                        <p class="beret-desc">De perseguidor en Damasco a ser el mayor misionero de Cristo. Transformó su espada en una Cruz para abrir camino al Evangelio hasta dar su vida en Roma.</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-tag">Cruces Negras</div>
+                        <h3 style="margin: 5px 0;">Maximiliano Brünner</h3>
+                        <p class="beret-desc">De opositor rebelde de la Congregación a convertirse por el amor de María. Su grito frente a la estatua de la Mater fue: <em>"¡Ave Imperatrix, morituri te salutant! (¡Salve Reina, los que van a morir por Ti te saludan!)"</em>.</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-tag">Mártir de la Conciencia</div>
+                        <h3 style="margin: 5px 0;">P. Franz Reinisch (1903-1942)</h3>
+                        <p class="beret-desc">Único sacerdote ejecutado por negarse a prestar el juramento a Hitler. Apóstol de la libertad de conciencia y autor del himno "Tú eres el Signo Grandioso".</p>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-tag">Pionero de la Mater</div>
+                        <h3 style="margin: 5px 0;">Joao Luiz Pozzobon (1904-1985)</h3>
+                        <p class="beret-desc">Inició la Campaña del Rosario de la Virgen Peregrina en Brasil en 1950, caminando más de 140.000 km con la imagen al hombro para llevar a la Mater a las familias y necesitados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. ORACIÓN E HIMNO CON ACORDES -->
+            <div class="info-section">
+                <div class="section-banner">6. Oración e Himno Oficial del Pionero</div>
+                <div class="quote-banner">
+                    Grito: <strong>"¡PIONERO DE SCHOENSTATT!"</strong> ➔ <strong>"¡ABRE CAMINOS!"</strong>
+                </div>
+
+                <div class="beret-grid">
+                    <div class="pedagogy-box" style="margin-top: 0;">
+                        <h3 style="margin-top: 0; color: var(--accent-red);">🙏 Oración del Pionero</h3>
+                        <p style="font-family: Georgia, serif; font-style: italic; font-size: 1.1rem; line-height: 1.6; margin: 0;">
+                            Querida Madre y Reina de los pioneros,<br>
+                            desde el Santuario te pido tu bendición.<br>
+                            Acompáñame y guíame en este día<br>
+                            para seguir a Jesús<br>
+                            como lo hizo José, mi hermano mayor.<br><br>
+                            Con él quiero ser: recio en la lucha,<br>
+                            libre para servir con alegría<br>
+                            y valiente apóstol de tu Reino.<br><br>
+                            Te ofrezco mi Capital de Gracias.<br>
+                            Ayuda a mi grupo a vivir heroicamente<br>
+                            la Ley del Pionero<br>
+                            para abrir camino a un Mundo Nuevo.<br>
+                            Amén.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-top: 0; text-transform: uppercase;">🎸 Himno del Pionero (Con Acordes)</h3>
+                        <div class="chords-box"><span class="chord-line">      LA         RE            LA</span>
+Somos pioneros abriendo nueva brecha,
+<span class="chord-line">          RE                     MI</span>
+abriendo juntos el camino a un Mundo Nuevo.
+<span class="chord-line">      LA         RE            LA</span>
+Vamos luchando, sorteando mil peligros,
+<span class="chord-line">       SIm                     MI</span>
+somos vanguardia de nueva juventud.
+<span class="chord-line">             RE     MI        LA   FA#m</span>
+Son nuestras manos alegres creadoras,
+<span class="chord-line">       RE          MI      LA</span>
+de iniciativas rebosa el corazón.
+
+<span class="chord-line">~ ESTRIBILLO ~</span>
+<span class="chord-line">        LA          RE             LA</span>
+Pionero hermano, ven Dios te ha escogido,
+<span class="chord-line">             RE                   MI</span>
+siguiendo al Padre abrirás la nueva ruta.
+<span class="chord-line">      RE          MI       LA   FA#m</span>
+Ama a María que tu entrega espera,
+<span class="chord-line">       RE            MI          LA</span>
+sé responsable por los que han de venir.
+
+<span class="chord-line">      LA         RE              LA</span>
+Somos Pioneros cual Cristo en la Tierra,
+<span class="chord-line">       RE                             MI</span>
+Él nos dio ejemplo y abrió ruta a un Mundo Nuevo.
+<span class="chord-line">  LA         RE            LA</span>
+A Él seguimos, María es nuestra guía,
+<span class="chord-line">        SIm                      MI</span>
+pues es su Madre y nuestra lo es también.
+<span class="chord-line">          RE     MI         LA   FA#m</span>
+Cristo el pionero la ama intensamente,
+<span class="chord-line">        RE           MI        LA</span>
+también nosotros con todo el corazón.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. QUÉ SE HACE EN UN ENCUENTRO -->
+            <div class="info-section">
+                <div class="section-banner">7. ¿Qué se debe hacer en cada Encuentro?</div>
                 <p style="font-family: Arial, sans-serif; font-weight: bold;">
-                    <strong>¡Hablamos de ENCUENTROS, no de reuniones!</strong> La pedagogía de pioneros acentúa el carácter vital, activo y fraterno. Todos los encuentros deben contar con un espacio amplio y un deporte/juego.
+                    <strong>¡Hablamos de ENCUENTROS, no de reuniones!</strong> Todo encuentro semanal sigue estos 6 momentos pedagógicos:
                 </p>
 
                 <div class="step-list">
                     <div class="step-item">
                         <div class="step-number">01</div>
-                        <div class="step-text">Oración Inicial frente a la imagen o Santuario.</div>
+                        <div class="step-text">Oración Inicial frente al Santuario de grupo o la Mater.</div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">02</div>
-                        <div class="step-text">Revisión vivencial del Propósito de la semana anterior.</div>
+                        <div class="step-text">Recapitulación y puesta en común del Propósito semanal.</div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">03</div>
-                        <div class="step-text">Relato o Historia viva (José Engling, San Pablo, P. Kentenich). ¡No leer, contar con pasión!</div>
+                        <div class="step-text">Tema central / Historia de vida (contada con entusiasmo, nunca leída).</div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">04</div>
-                        <div class="step-text">Juego Pedagógico o Picado de Fútbol / Rugby (esencial para forjar comunidad).</div>
+                        <div class="step-text">Juego del encuentro + Deporte ("picado" de fútbol, rugby, etc.).</div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">05</div>
-                        <div class="step-text">Fijación de un nuevo Propósito semanal (para el Capital de Gracias).</div>
+                        <div class="step-text">Propósito concreto para la semana y entrega al Capital de Gracias.</div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">06</div>
-                        <div class="step-text">Oración Final y Grito de Pioneros.</div>
+                        <div class="step-text">Oración Final del Pionero y Grito de guerra.</div>
                     </div>
                 </div>
             </div>
@@ -679,17 +888,17 @@
         <!-- ========================================== -->
         <div id="tab-itinerario" class="tab-content">
             <div class="info-section" style="margin-bottom: 20px;">
-                <div class="section-banner" style="margin-bottom: 15px;">Itinerario Pedagógico Completo</div>
+                <div class="section-banner" style="margin-bottom: 15px;">Itinerario Pedagógico Completo (76 Encuentros)</div>
                 <p style="font-family: Arial, sans-serif; font-weight: bold; margin: 0;">
-                    Selecciona una de las 4 etapas para consultar la guía oficial de encuentros, objetivos y dinámicas de juego:
+                    Selecciona una etapa para ver la estructura de cada encuentro, su objetivo, relato y juego:
                 </p>
             </div>
 
             <div class="itinerary-selector">
-                <button class="stage-btn active" onclick="showStage('bandera')">🚩 Etapa Bandera (13)</button>
-                <button class="stage-btn" onclick="showStage('santuario')">📍 Etapa Santuario (15)</button>
-                <button class="stage-btn" onclick="showStage('cruz')">⚔️ Etapa Cruz Espada (23)</button>
-                <button class="stage-btn" onclick="showStage('corona')">👑 Etapa Corona (25)</button>
+                <button class="stage-btn active" onclick="showStage('bandera', this)">🚩 Etapa Bandera (13)</button>
+                <button class="stage-btn" onclick="showStage('santuario', this)">📍 Etapa Santuario (15)</button>
+                <button class="stage-btn" onclick="showStage('cruz', this)">⚔️ Etapa Cruz Espada (23)</button>
+                <button class="stage-btn" onclick="showStage('corona', this)">👑 Etapa Corona (25)</button>
             </div>
 
             <!-- LISTA DE ENCUENTROS DINÁMICA -->
@@ -903,16 +1112,14 @@
 
     <!-- Script de navegación y datos de encuentros -->
     <script>
-        // Manejo de Tabs
-        window.switchTab = function(tabId) {
+        window.switchTab = function(tabId, btnEl) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             
-            event.target.classList.add('active');
+            if (btnEl) btnEl.classList.add('active');
             document.getElementById(tabId).classList.add('active');
         };
 
-        // Base de datos de los encuentros según los 4 itinerarios pedagógicos
         const encuentrosData = {
             bandera: [
                 { num: 1, title: "¿Qué son los Pioneros de Schoenstatt? Su mística", obj: "Introducir a los chicos en el lema 'Pionero de Schoenstatt, abre camino'.", juego: "Rescatar la Botella", relato: "Martin Luther King y Joao Pozzobon." },
@@ -999,10 +1206,9 @@
             ]
         };
 
-        // Renderizado de lista de encuentros
-        window.showStage = function(stageKey) {
+        window.showStage = function(stageKey, btnEl) {
             document.querySelectorAll('.stage-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (btnEl) btnEl.classList.add('active');
 
             const container = document.getElementById('encuentrosContainer');
             const data = encuentrosData[stageKey] || [];
@@ -1028,10 +1234,8 @@
             });
         };
 
-        // Cargar por defecto la primera etapa
         document.addEventListener('DOMContentLoaded', () => {
-            const defaultBtn = document.querySelector('.stage-btn');
-            if (defaultBtn) defaultBtn.click();
+            showStage('bandera', document.querySelector('.stage-btn'));
         });
     </script>
 </body>
